@@ -298,5 +298,32 @@ public:
 		string recieverID;
 		bool isRead;
 	public:
-		void SetNotificationDetails( string notif , string msg string )
+		void SetNotificationDetails(string notif, string msg, string recid, bool Isread) {
+			notification = notif;
+			message = msg;
+			recieveerID = recid;
+			isRead = Isread;
+		}
+		void showNotufucation() {
+			cout << " ID for nitification is " << notification << endl;
+			cout << " Message is " << message << endl;
+			cout << "Reciever id is " << recieverID << endl;
+			cout << "Status: "
+				<< (isRead ? "Read" : "Unread") << endl;
+		}
+		void MarkAsRead() {
+			isRead = true;
+			cout << "Notificstion has been marked as read" << isRead << endl;
+		}
+		void MarkAsUnrerad() {
+			isRead = false;
+			cout << " Notification has been marked as unread" << isRead << endl;
+		}
+
 	};
+
+	int main() {
+
+		// Create instances of classes and demonstrate functionality
+		return 0;
+	}
