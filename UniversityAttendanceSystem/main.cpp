@@ -157,23 +157,75 @@ public:
 		bool isopen;
 
 	public:
+		void setGateDetails(int gateNo, string loc, bool open) {
+			gate_NO = gateNo;
+			location = loc;
+			isopen = open;
+		}
+		void Opengate() {
+			isopen = true;
+			cout << "Gate " << gate_NO << " is now open." << endl;
+		}
+		void Closegate() {
+			isopen = false;
+			cout << "Gate " << gate_NO << " is now closed." << endl;
+		}
+		void DisplayGateInfo() {
+			cout << "Gate No: " << gate_NO << endl;
+			cout << "Location: " << location << endl;
+			cout << "Status: " << (isopen ? "Open" : "Closed") << endl;
+		}
 
 
 	};
 	class course {
+	private:
 
 		string courseID;
 		string course_Name :
 		int creditHours;
 		string instructorID;
-
-
+	public:
+		void setCoureDetails(string id, string name, int credithrs, string instructorid) {
+			courseID = id;
+			course_Name = name;
+			creditHours = credithrs;
+			instructorID = instructorid;
+		}
+		void displayCourseDetails() {
+			cout << "ID of course is " << courseID << endl;
+			cout << " Name course is " << course_Name << endl;
+			cout << " credit hours of course is" << creditHours << endl;
+			cout << " course's instructor's ID id " << instructorID << endl;
+		}
+		void AssignInstructor(string Instructorid) {
+			instructorID = instructorid;
+			cout << " instructor with ID" << instructorID << "is assigned to course" << course_Name << endl;
+		}
 	};
 	class report {
-		string repertID;
+		string reportID;
 		string title;
 		string description;
 		string date;
+	public:
+		void SetReportDetails(string id, string T, string desc, string D) {
+			reportID = id;
+			title = T;
+			description = desc;
+			date = D;
+		}
+
+		void Generate_Report() {
+			cout << " report of title " << title << " has been generated succesfully" << endl;
+		}
+		Void DisplayReportDetails() {
+			cout << " ID of repert is" << reportID << endl;
+			cout << "Title of Report is " << title << endl;
+			cout << " Description of  report is " << description << endl;
+			cout << " Date of generation of report is" << date << endl;
+		}
+
 
 	};
 
@@ -182,6 +234,24 @@ public:
 		string dpetID;
 		string dept_Name;
 		string Headofdept;
+	public:
+		void SetDepartmentDetails(srting deptid, string deptName, string HOD) {
+			depptID = deptid;
+			dept_Nmae = deptName;
+			HeadodofDept = HOD;
+		}
+		void DiplayDepartmentDetails() {
+			cout << " ID of department is " << deptID << endl;
+			cout << " Name of Department is " << dept_Name << endl;\
+				cout" Head of Deoartment is " << Headofdept <<  <<endl;
+		}
+		void ChangeHOD(string NewHOD) {
+			Headofdept = NewHOD;
+		}
+		void ShoeNewHOD() {
+			cout << " New Assigned heaad if department is  " << NewHOD << endl;
+		}
+
 
 
 	};
@@ -191,6 +261,35 @@ public:
 		string day;
 		string time;
 		int room_No;
+	public:
+		void SetSchedualDetails(string SID, string Courseid, string d, string t, int R_No) {
+			schedualID = SID;
+			cpurseID = courseid;
+			day = d;
+			time = t;
+			room_No = R_No;
+		}
+		void DisplaySchedualDetails() {
+			cout << "Id of Schedual is " << schedualID << endl;
+			cout << "course id is " << courseID << endl;
+			cout << " Day of class is " << day << endl;
+			cout << " class time is " << time << endl;
+			cout "Class in room number " << room_No << endl;
+		}
+		void UpdateRoom(int NewRoom) {
+
+			room_No = NewRoom;
+			cout << " New Room has been Assigned to class is " << NewRoom << endl;
+		}
+		void ChangeClassTime(string NewTime , string  NewDay) {
+			time = NewTime;
+			day = NewDay;
+
+			cout << " updated time of class is" << NewTime  << " " <<" On day" << NewDay << endl;
+		}
+
+
+
 
 	};
 	class notification {
@@ -198,5 +297,6 @@ public:
 		string message;
 		string recieverID;
 		bool isRead;
-
+	public:
+		void SetNotificationDetails( string notif , string msg string )
 	};
